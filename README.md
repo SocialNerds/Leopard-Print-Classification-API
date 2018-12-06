@@ -49,21 +49,26 @@ docker exec -it ai python predict.py 1
 
 7. You should see, something like,
 ~~~~
-Using TensorFlow backend.
-                       Good Leopardism
-Bad_Leopard_126.jpeg              17.2
-Bad_Leopard_159.jpeg              57.2
-Bad_Leopard_225.jpeg              96.8
-Bad_Leopard_277.jpeg              12.0
-Bad_Leopard_357.png                2.0
-Bad_Leopard_366.png               93.6
-Bad_Leopard_380.png               57.3
-Good_Leopard_163.jpeg             41.8
-Good_Leopard_198.jpeg             47.6
-Good_Leopard_215.jpeg             31.8
-Good_Leopard_240.png              87.5
-Good_Leopard_253.png              18.4
-Good_Leopard_5.jpeg               99.0
+Percentage (%) of Good Leopardism,
+
+Bad_Leopard_105.jpeg   10.1
+Bad_Leopard_132.jpeg    9.9
+Bad_Leopard_165.jpeg   26.5
+Bad_Leopard_172.jpeg    7.9
+Bad_Leopard_3.jpeg     39.6
+Bad_Leopard_375.png    69.2
+Bad_Leopard_380.png     3.2
+Bad_Leopard_385.png    61.7
+Bad_Leopard_39.jpeg    42.7
+Good_Leopard_1.jpeg    84.4
+Good_Leopard_111.jpeg  75.8
+Good_Leopard_12.jpeg   97.1
+Good_Leopard_146.jpeg   1.0
+Good_Leopard_171.jpeg  76.5
+Good_Leopard_202.jpeg  61.9
+Good_Leopard_232.png   70.9
+Good_Leopard_25.jpeg    6.8
+Good_Leopard_253.png   78.7
 ~~~~
 
 `Now, you finally know!`

@@ -24,10 +24,11 @@ docker-compose build && docker-compose up -d
 
 `You could use the pretrained model. In that case, go to step 4.`
 
-1. Training photos,
+2. Training photos,
 - Convince your special someone to find and classify at least 400 photos of leopard print 
 - Place the good leopard print photos in data/photos/training/good
 - Place the bad leopard print photos in data/photos/training/bad
+- For better results, crop only the part that leopard print is visible
 
 3. Train your model,
 ~~~~
@@ -39,12 +40,14 @@ docker exec -it ai python train.py 1
 data/photos/test
 ~~~~
 
-5. Run your model,
+5. For better results, crop only the part that leopard print is visible
+
+6. Run your model,
 ~~~~
 docker exec -it ai python predict.py 1
 ~~~~
 
-6. You should see, something like,
+7. You should see, something like,
 ~~~~
 Using TensorFlow backend.
                        Good Leopardism
@@ -65,7 +68,7 @@ Good_Leopard_5.jpeg               99.0
 
 `Now, you finally know!`
 
-7. Shut down container(s),
+8. Shut down container(s),
 ~~~~
 docker-compose down
 ~~~~

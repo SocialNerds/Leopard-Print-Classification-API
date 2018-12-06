@@ -35,7 +35,7 @@ RUN pip --no-cache-dir install --upgrade /tmp/tensorflow_pkg/tensorflow-*.whl &&
     rm -rf /root/.cache
 
 # Install some packages.
-RUN pip install keras h5py tb-nightly scikit-learn pandas Pillow
+RUN pip install h5py tb-nightly scikit-learn pandas Pillow
 
 # Copy keys and create main path.
 RUN chown -R serveruser:serveruser /home/serveruser

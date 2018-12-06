@@ -1,11 +1,7 @@
 import numpy as np
 from pathlib import Path
-import os, sys # Stupid hack to disable "Using TensorFlow backend." notification.
-stderr = sys.stderr
-sys.stderr = open(os.devnull, 'w')
-from keras.models import Sequential
-from keras.layers import Activation, Dense, Dropout, Conv2D, Flatten, MaxPooling2D, BatchNormalization
-sys.stderr = stderr
+from tensorflow.keras.models import Sequential
+from tensorflow.keras.layers import Activation, Dense, Dropout, Conv2D, Flatten, MaxPooling2D
 
 class PredictionModel(Sequential):
     """ Prediction model manipulation """

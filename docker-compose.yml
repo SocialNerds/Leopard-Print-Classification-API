@@ -1,0 +1,15 @@
+version: "3"
+services:
+  ai:
+    build:
+      context: ./ai
+      args:
+        UID: ${USER_ID}
+        GID: ${GROUP_ID}
+    container_name: ai
+    ports:
+      - "8888:8888"
+      - "6006:6006"
+      - "8000:8000"
+    volumes:
+      - ./data:/home/serveruser/data:delegated

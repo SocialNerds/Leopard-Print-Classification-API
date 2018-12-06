@@ -5,7 +5,10 @@ a gift, like a dress with leopard print, to your special someone and you just do
 Your problems are over!
 
 # Check the full explanation video (GR)
+`(Pending)`
+<!---
 [![Αποκρυπτογράφηση Γυναικείου Μυαλού με AI, TensorFlow & Keras](https://img.youtube.com/vi/mKeI0Je9cKs/0.jpg)](https://www.youtube.com/watch?v=mKeI0Je9cKs)
+-->
 
 # Installation
 Requirements

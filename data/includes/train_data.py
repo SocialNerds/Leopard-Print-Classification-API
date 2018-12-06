@@ -97,11 +97,11 @@ class Data:
         
         # Get good photos.
         for item in self.get_photos_from_path(self.good):
-            data.append([item[0], [1, 0]])
+            data.append([item[0], [1]])
 
         # Get bad photos.
         for item in self.get_photos_from_path(self.bad):
-            data.append([item[0], [0, 1]])
+            data.append([item[0], [0]])
         
         random.shuffle(data)
 

@@ -1,7 +1,11 @@
 import numpy as np
 from pathlib import Path
+import os, sys # Stupid hack to disable "Using TensorFlow backend." notification.
+stderr = sys.stderr
+sys.stderr = open(os.devnull, 'w')
 from keras.models import Sequential
-from keras.layers import Dense, Dropout, Conv2D, Flatten
+from keras.layers import Activation, Dense, Dropout, Conv2D, Flatten, MaxPooling2D, BatchNormalization
+sys.stderr = stderr
 
 class PredictionModel(Sequential):
     """ Prediction model manipulation """
@@ -53,15 +57,21 @@ class PredictionModel(Sequential):
         """
         Initialize model.
         """
-        super().add(Conv2D(96, kernel_size=3, activation='relu', input_shape=self.INPUT_SHAPE))
+        super().add(Conv2D(96, (3, 3), input_shape=self.INPUT_SHAPE))
+        super().add(Activation("relu"))
+        super().add(MaxPooling2D(pool_size = (2,2)))
         super().add(Dropout(0.1))
-        super().add(Conv2D(64, kernel_size=3, activation='relu'))
+        super().add(Conv2D(64, (3, 3)))
+        super().add(Activation("relu"))
+        super().add(MaxPooling2D(pool_size = (2,2)))
         super().add(Dropout(0.1))
         super().add(Flatten())
-        super().add(Dense(2, activation='softmax'))
-        super().compile(loss='categorical_crossentropy', optimizer='adam', metrics=['accuracy'])
+        super().add(Dense(64, activation='relu'))
+        super().add(Dropout(0.1))
+        super().add(Dense(1, activation='sigmoid'))
+        super().compile(loss='binary_crossentropy', optimizer='adam', metrics=['accuracy'])
 
-    def train(self, values, labels, n_epochs=10):
+    def train(self, values, labels, n_epochs=1):
         """
         Train the model.
 

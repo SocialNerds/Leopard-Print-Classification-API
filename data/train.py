@@ -10,8 +10,9 @@ tf.logging.set_verbosity(tf.logging.ERROR)
 model = prediction_model.PredictionModel(modelarg.get_argument())
 
 # Train model multiple times with different cuts and shufflings.
-for i in range(1, 16):
-    print('Running', i, 'out of 15 times.')
+training_times = 20
+for i in range(1, training_times + 1):
+    print('Running', i, 'out of', training_times, 'times.')
     values, labels = train_data.Data().get_training_photos()
     model.train(values, labels)
 
